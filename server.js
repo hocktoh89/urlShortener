@@ -1,8 +1,16 @@
-var express = require('express');
+import express from 'express';
+import Get from './GET';
 
-app = express();
-port = process.env.PORT || 3000;
+let app = express();
+let port = process.env.PORT || 3000;
 
-app.listen(port);
+app.get('/', (req, res) => res.send('Hello'));
+app.get('/shortenedUrl', Get.getShortenUrl);
 
-console.log('todo list RESTFUL API server started on port ' + port);
+app.listen(port, (err) => {
+    if (err) {
+        return console.log('Server fail at ', err);
+    }
+
+    console.log(`Server started on port localhost: ${port}`);
+});
