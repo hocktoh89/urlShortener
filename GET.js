@@ -12,5 +12,6 @@ exports.getShortenUrl = async function(req, res) {
        result = json;
     });
 
-    res.send(`Hey Thomas ${result.data.url}`);
+    return result.data.url;
+    // return result.data.url;
 };
