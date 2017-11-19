@@ -14,3 +14,5 @@ app.listen(port, (err) => {
 
     console.log(`Server started on port localhost: ${port}`);
 });
+
+module.exports = app; 

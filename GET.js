@@ -12,6 +12,6 @@ exports.getShortenUrl = async function(req, res) {
        result = json;
     });
 
-    return result.data.url;
-    // return result.data.url;
+    res.setHeader('Content-Type', 'application/json');
+    return res.send(JSON.stringify({ url: `${result.data.url}` }));
 };
