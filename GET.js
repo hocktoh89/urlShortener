@@ -5,7 +5,7 @@ const longUrl = 'https://www.khanacademy.org/computing/computer-science/informat
 
 exports.getShortenUrl = async function(req, res) {
     let result = {};
-    await fetch(`https://api-ssl.bitly.com/v3/shorten?access_token=${access_token}&longUrl=${longUrl}`)
+    await fetch(`https://api-ssl.bitly.com/v3/shorten?access_token=${access_token}&longUrl=${req.query.longUrl}`)
     .then(function(res) {
         return res.json();
     }).then(function(json) {

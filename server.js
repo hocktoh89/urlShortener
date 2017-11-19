@@ -5,7 +5,7 @@ let app = express();
 let port = process.env.PORT || 3000;
 
 app.get('/', (req, res) => res.send('Hello'));
-app.get('/shortenedUrl', Get.getShortenUrl);
+app.get('/shortenedUrl/:longUrl?', Get.getShortenUrl);
 
 app.listen(port, (err) => {
     if (err) {
